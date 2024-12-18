@@ -27,7 +27,7 @@ def slope(x):
 # Initial conditions
 #[r, r_dot, theta, theta_dot]
 
-x = [np.array([l+m*g/k,0,0,1])]
+x = [np.array([l,0,1.4,0])]
 
 for i in range(N-1): #Runge Kutta stepwise increase
     k1 = slope(x[i])
@@ -75,4 +75,7 @@ def update(frame):
 
 ani = animation.FuncAnimation(fig=fig, func=update, frames=N, interval=90)
 plt.show()
-ani.save("pendulum_animation_multi_mode.gif")
+
+#Different situations obtained by changing initial conditions
+# ani.save("pendulum_animation_single_mode.gif")
+# ani.save("pendulum_animation_multi_mode.gif")
